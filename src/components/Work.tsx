@@ -1,41 +1,46 @@
-import React from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectCard from "./ProjectCard";
 
 const Work = () => {
   const projects = [
     {
       title: "Gartner's Benchmarks",
       client: "Gartner",
-      description: "Designed a benchmark UX to help business leaders compare critical performance data against the competition.",
+      description:
+        "Lead the redesign of the benchmark tools UX to help business leaders compare critical performance data against the competition.",
       metrics: [
         { label: "Reduction in Analysis Time", value: "45%" },
-        { label: "Increase in User Adoption", value: "3.2x" }
+        { label: "Increase in User Adoption", value: "3.2x" },
       ],
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/case-study/gartner-benchmarks"
+      image:
+        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      link: "/case-study/gartner-benchmarks",
     },
     {
       title: "Interactive Hype Cycle Prototype",
       client: "Gartner",
-      description: "Created an interactive version of Gartner's famous Hype Cycle to improve user engagement and insight delivery.",
+      description:
+        "Created an interactive version of Gartner's famous Hype Cycle to improve user engagement and insight delivery.",
       metrics: [
         { label: "Engagement Increase", value: "37%" },
-        { label: "User Satisfaction", value: "4.8/5" }
+        { label: "User Satisfaction", value: "4.8/5" },
       ],
-      image: "https://images.pexels.com/photos/7103/writing-notes-idea-conference.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/case-study/hype-cycle"
+      image:
+        "https://images.pexels.com/photos/7103/writing-notes-idea-conference.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      link: "/case-study/hype-cycle",
     },
     {
       title: "Decision Matrices Redesign",
       client: "Lockheed Martin",
-      description: "Redesigned critical decision matrices using cognitive load analysis for improved operator performance.",
+      description:
+        "Redesigned critical decision matrices using cognitive load analysis for improved operator performance.",
       metrics: [
         { label: "Error Reduction", value: "37%" },
-        { label: "Decision Speed", value: "+42%" }
+        { label: "Decision Speed", value: "+42%" },
       ],
-      image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "/case-study/decision-matrices"
-    }
+      image:
+        "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      link: "/case-study/decision-matrices",
+    },
   ];
 
   return (
@@ -44,10 +49,10 @@ const Work = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 relative max-w-4xl mx-auto">
           <span className="text-[#4ECDC4]">/</span> Selected Work
         </h2>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard 
+            <ProjectCard
               key={index}
               title={project.title}
               client={project.client}
