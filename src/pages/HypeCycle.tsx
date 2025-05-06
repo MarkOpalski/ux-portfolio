@@ -6,7 +6,7 @@ import CaseStudy from '../components/CaseStudy';
 const HypeCycle = () => {
   return (
     <CaseStudy
-      title="Interactive Hype Cycle Prototype"
+      title="Interactive Hype Cycle"
       client="Gartner"
       impact="37% increase in engagement and 4.8/5 user satisfaction score"
       summary="Created an interactive version of Gartner's famous Hype Cycle to improve user engagement and insight delivery."
