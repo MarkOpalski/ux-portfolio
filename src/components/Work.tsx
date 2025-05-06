@@ -3,20 +3,20 @@ import ProjectCard from "./ProjectCard";
 const Work = () => {
   const projects = [
     {
-      title: "Gartner's Benchmarks",
+      title: "Benchmark Analysis & Modeling",
       client: "Gartner",
       description:
         "Lead the redesign of the benchmark tools UX to help business leaders compare critical performance data against the competition.",
       metrics: [
         { label: "Reduction in Analysis Time", value: "45%" },
-        { label: "Increase in User Adoption", value: "3.2x" },
+        { label: "Increase User Adoption", value: "3.2x" },
       ],
       image:
         "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       link: "/case-study/gartner-benchmarks",
     },
     {
-      title: "Interactive Hype Cycle Prototype",
+      title: "Interactive Hype Cycle",
       client: "Gartner",
       description:
         "Created an interactive version of Gartner's famous Hype Cycle to improve user engagement and insight delivery.",
