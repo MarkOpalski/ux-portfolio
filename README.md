@@ -44,4 +44,4 @@ The site is deployed on GitHub Pages.
 
 ## Attribution
 
-See [CITATIONS.md](CITATIONS.md) for code references and attributions.
+See [Citations.md](Citations.md) for code references and attributions.
