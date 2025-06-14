@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma Embed Performance Test</title>
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://embed.figma.com" />
+    <link rel="dns-prefetch" href="https://embed.figma.com" />
+
+    <!-- Inline critical CSS for faster rendering -->
+    <style>
+      .figma-container {
+        width: 100%;
+        height: 600px;
+        margin: 20px 0;
+        contain: content; /* CSS containment for better performance */
+      }
+      #performance-metrics {
+        padding: 20px;
+        background: #f5f5f5;
+        margin: 20px 0;
+        contain: content;
+      }
+      /* Hide iframe until it's loaded */
+      .figma-container iframe {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      .figma-container iframe.loaded {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="figma-container">
+      <iframe
+        src="https://embed.figma.com/deck/5SFTHmpNgWccg9AZFqGeDw/Human-Factors-Design-Samples?node-id=6-114&viewport=-144%2C-71%2C0.67&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+        style="border: 1px solid rgba(0, 0, 0, 0.1)"
+        width="100%"
+        height="100%"
+        allow="fullscreen"
+        loading="lazy"
+        importance="low"
+        onload="this.classList.add('loaded')"
+        fetchpriority="low"
+      >
+      </iframe>
+    </div>
+
+    <div id="performance-metrics">
+      <h2>Performance Metrics</h2>
+      <p>Load Time: <span id="loadTime">...</span></p>
+      <p>First Paint: <span id="firstPaint">...</span></p>
+      <p>First Contentful Paint: <span id="fcp">...</span></p>
+    </div>
+
+    <script>
+      // Use performance observer for more accurate metrics
+      const startTime = performance.now();
+
+      // Create a PerformanceObserver to monitor loading metrics
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.name === "largest-contentful-paint") {
+            console.log("LCP:", entry.startTime);
+          }
+        }
+      });
+
+      // Start observing
+      observer.observe({ entryTypes: ["largest-contentful-paint"] });
+
+      window.addEventListener("load", () => {
+        const loadTime = performance.now() - startTime;
+        document.getElementById("loadTime").textContent = `${loadTime.toFixed(
+          2
+        )}ms`;
+
+        // Get First Paint metric
+        const paintMetrics = performance.getEntriesByType("paint");
+        const firstPaint = paintMetrics.find(
+          (entry) => entry.name === "first-paint"
+        );
+        if (firstPaint) {
+          document.getElementById(
+            "firstPaint"
+          ).textContent = `${firstPaint.startTime.toFixed(2)}ms`;
+        }
+
+        // Get First Contentful Paint metric
+        const firstContentfulPaint = paintMetrics.find(
+          (entry) => entry.name === "first-contentful-paint"
+        );
+        if (firstContentfulPaint) {
+          document.getElementById(
+            "fcp"
+          ).textContent = `${firstContentfulPaint.startTime.toFixed(2)}ms`;
+        }
+      });
+    </script>
+  </body>
+</html>
