@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const Hero = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -7,13 +7,13 @@ const Hero = () => {
   useEffect(() => {
     const animateText = () => {
       if (headingRef.current) {
-        headingRef.current.style.opacity = '1';
-        headingRef.current.style.transform = 'translateY(0)';
+        headingRef.current.style.opacity = "1";
+        headingRef.current.style.transform = "translateY(0)";
       }
       setTimeout(() => {
         if (subheadingRef.current) {
-          subheadingRef.current.style.opacity = '1';
-          subheadingRef.current.style.transform = 'translateY(0)';
+          subheadingRef.current.style.opacity = "1";
+          subheadingRef.current.style.transform = "translateY(0)";
         }
       }, 300);
     };
@@ -22,42 +22,62 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="top" className="h-screen flex items-center relative overflow-hidden">
+    <section
+      id="top"
+      className="h-screen flex items-center relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[#121212] z-[-1]"></div>
-      <div 
-        className="absolute inset-0 opacity-5 z-[-1]" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle at 50% 50%, #4ECDC4 0%, transparent 50%)',
-          filter: 'blur(60px)',
-          transform: 'translateZ(0)'
+      <div
+        className="absolute inset-0 opacity-5 z-[-1]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 50% 50%, #4ECDC4 0%, transparent 50%)",
+          filter: "blur(60px)",
+          transform: "translateZ(0)",
         }}
       ></div>
-      
+
       <div className="container mx-auto px-6">
-        <h1 
+        <h1
           ref={headingRef}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 opacity-0 transform translate-y-8 transition-all duration-700"
         >
-          Mark <span className="text-[#4ECDC4]">Opalski</span>
+          Human-Centered Design for Information Systems
         </h1>
-        <p 
+        <p
           ref={subheadingRef}
           className="text-xl md:text-2xl text-gray-300 max-w-2xl opacity-0 transform translate-y-8 transition-all duration-700 delay-300"
         >
-          Independent AI/UX Consultant based in New York, helping businesses unlock growth and competitive advantage through strategic design and innovation.
+          I help mission-driven teams reduce error, align faster, and build
+          products that work in the real world.
         </p>
-        
-        <div className="mt-12 opacity-0 transform translate-y-8 transition-all duration-700 delay-500"
-             style={{ opacity: 1, transform: 'translateY(0)' }}>
-          <a href="#contact" className="px-8 py-3 bg-[#4ECDC4] text-[#121212] rounded-full font-medium hover:bg-[#3DB9B0] transition-all">
+        <p
+          className="mt-6 text-lg text-gray-400 max-w-3xl opacity-0 transform translate-y-8 transition-all duration-700 delay-400"
+          style={{ opacity: 1, transform: "translateY(0)" }}
+        >
+          I'm a UX Consultant specializing in human-system integration,
+          AI-augmented workflows, and interface design for regulated
+          environments. With 20+ years of experience across sectors like
+          finance, healthcare, defense, and academia, I guide teams through
+          research-backed, results-driven design.
+        </p>
+
+        <div
+          className="mt-12 opacity-0 transform translate-y-8 transition-all duration-700 delay-500"
+          style={{ opacity: 1, transform: "translateY(0)" }}
+        >
+          <a
+            href="#contact"
+            className="px-8 py-3 bg-[#4ECDC4] text-[#121212] rounded-full font-medium hover:bg-[#3DB9B0] transition-all"
+          >
             Let's Connect
           </a>
         </div>
       </div>
-      
+
       <div className="absolute bottom-12 left-0 right-0 flex justify-center">
-        <a 
-          href="#about" 
+        <a
+          href="#about"
           className="text-white flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
           aria-label="Scroll to About section"
         >

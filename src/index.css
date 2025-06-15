@@ -5,7 +5,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 5rem;
+  }
+  
+  body {
+    @apply overflow-x-hidden;
+    min-height: 100vh;
+  }
+
+  #root {
+    @apply relative;
+    min-height: 100vh;
   }
 }
 

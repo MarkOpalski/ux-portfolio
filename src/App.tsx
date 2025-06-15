@@ -17,9 +17,9 @@ import DecisionMatrices from "./pages/DecisionMatrices";
 import "./cursor.css";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-[#121212] text-white min-h-screen">
+  <div className="bg-[#121212] text-white min-h-screen relative">
     <Header />
-    <main>{children || <Outlet />}</main>
+    <main className="relative">{children || <Outlet />}</main>
     <Footer />
   </div>
 );
