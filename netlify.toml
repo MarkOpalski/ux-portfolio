@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[[plugins]]
+package = "netlify-plugin-submit-sitemap"
+
+# Ensure HTML files are copied to dist
+[[plugins]]
+package = "netlify-plugin-copy-files"
+  [plugins.inputs]
+    source = "*.html"
+    destination = "dist/"
