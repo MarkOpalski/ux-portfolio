@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: '/index.html',
-        figmaTest: '/test-figma.html'
+        main: 'index.html',
+        figmaTest: 'test-figma.html'
       },
     },
   },
